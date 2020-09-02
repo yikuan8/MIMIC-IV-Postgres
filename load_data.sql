@@ -40,6 +40,8 @@ SET search_path TO mimiciv;
 
 \copy EMAR FROM 'emar.csv' DELIMITER ',' CSV HEADER NULL ''
 
+\copy EMAR_DETAIL FROM 'emar_detail.csv' DELIMITER ',' CSV HEADER NULL ''
+
 \copy HCPCSEVENTS FROM 'hcpcsevents.csv' DELIMITER ',' CSV HEADER NULL ''
 
 \copy LABEVENTS FROM 'labevents.csv' DELIMITER ',' CSV HEADER NULL ''
