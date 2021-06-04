@@ -19,6 +19,26 @@ BASE_DIR
 │   │   ...
 ```
 
+#### 1.ED Prepare the ED data
+Complete the PhysioNet Credentialing and download [MIMIC-IV-ED data][MIMIC-IV_ED]. Decompress all .csv.gz file using "gzip -d *.gz". Move those decompressed file to the same base directory. You will have such directory structure:
+```
+BASE_DIR  
+│
+└───core
+│   │   admissions.csv
+│   │   patients.csv
+│   │   transfers.csv
+└───hosp
+│   │   d_hcpcs.csv
+│   │   ...
+└───icu
+│   │   d_items.csv
+│   │   ...
+└───ed
+│   │   edstays.csv
+│   │   ...
+```
+
 #### 2. Install Postgresql server
 Please refer [here][postgresql] for postgresql download and installation
 
@@ -37,11 +57,20 @@ CREATE SCHEMA mimiciv;                       #create new schema
 ```sh
 psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f create_tables.sql
 ```
+#### 4.ED Creat a set of empty tables with create_ed_tables.sql
+```sh
+psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f create_ed_tables.sql
+```
 
 #### 5. load .csv files into the empty tables with load_data.sql
 Change /YOUR/BASE/DIR/ to your BASE_DIR in the line 3,11,27 and run:
 ```sh
 psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f load_data.sql
+```
+#### 5.ED load .csv files into the empty tables with load_ed_data.sql
+Change /YOUR/BASE/DIR/ to your BASE_DIR in the line 3 and run:
+```sh
+psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f load_eddata.sql
 ```
 
 #### NOTES:
@@ -55,4 +84,5 @@ psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f load_data.s
 
 [MIMIC-III]: https://mimic.physionet.org/tutorials/install-mimic-locally-ubuntu/
 [MIMIC-IV]: https://mimic-iv.mit.edu/docs/access/
+[MIMIC-IV-ED]: https://physionet.org/content/mimic-iv-ed/1.0/
 [postgresql]: http://www.postgresql.org/download/
