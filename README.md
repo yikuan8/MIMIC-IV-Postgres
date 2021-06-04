@@ -59,7 +59,7 @@ CREATE SCHEMA mimiciv;                       #create new schema
 ```sh
 psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f create_tables.sql
 ```
-#### 4.ED Creat a set of empty tables with create_ed_tables.sql
+#### 4.ED Creat a set of empty ED tables with create_ed_tables.sql
 ```sh
 psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f create_ed_tables.sql
 ```
@@ -69,7 +69,7 @@ Change /YOUR/BASE/DIR/ to your BASE_DIR in the line 3,11,27 and run:
 ```sh
 psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f load_data.sql
 ```
-#### 5.ED load .csv files into the empty tables with load_ed_data.sql
+#### 5.ED load .csv files into the empty ED tables with load_ed_data.sql
 Change /YOUR/BASE/DIR/ to your BASE_DIR in the line 3 and run:
 ```sh
 psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f load_eddata.sql
