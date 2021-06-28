@@ -1,6 +1,6 @@
 SET search_path TO mimiciv;
 
-\cd /YOUR/BASE/DIR/core -- change /your/base/dir to your mimic-iv base_dir
+\cd /share/fsmresfiles/mimic4/physionet.org/files/mimiciv/1.0/core
 
 \copy ADMISSIONS FROM 'admissions.csv' DELIMITER ',' CSV HEADER NULL ''
 
@@ -8,7 +8,7 @@ SET search_path TO mimiciv;
 
 \copy TRANSFERS FROM 'transfers.csv' DELIMITER ',' CSV HEADER NULL ''
 
-\cd /YOUR/BASE/DIR/icu -- change /your/base/dir to your mimic-iv base_dir
+\cd /share/fsmresfiles/mimic4/physionet.org/files/mimiciv/1.0/icu
 
 \copy D_ITEMS FROM 'd_items.csv' DELIMITER ',' CSV HEADER NULL ''
 
@@ -24,7 +24,11 @@ SET search_path TO mimiciv;
 
 \copy PROCEDUREEVENTS FROM 'procedureevents.csv' DELIMITER ',' CSV HEADER NULL ''
 
-\cd /YOUR/BASE/DIR/hosp -- change /your/base/dir to your mimic-iv base_dir
+
+
+
+
+\cd /share/fsmresfiles/mimic4/physionet.org/files/mimiciv/1.0/hosp
 
 \copy D_HCPCS FROM 'd_hcpcs.csv' DELIMITER ',' CSV HEADER NULL ''
 
