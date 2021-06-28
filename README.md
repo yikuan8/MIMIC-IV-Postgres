@@ -1,5 +1,7 @@
 # Installing MIMIC-IV-ED and MIMIC-IV in a local Postgres database
 
+**Jun 28th, 2021**: The repo updates to MIMIC-IV V4.0. As there is a major update of MIMIC-IV from version 0.4 to 1.0, I modify some codes to accomodate these changes.
+
 **Jun 2nd, 2021**: MIMIC-IV-ED is released. Shout out to the authors. If you don't need the ED data, just skip the steps numbered with "ED". If you have already installed MIMIC-IV using this repo, you only need to run 1.ED, 4.ED, 5.ED.
 
 In light of there is no offcial guide of deploying MIMIC-IV to Postgres server, this repo will help you navigate this process. We made necessary modification based on the [offcial guide of MIMIC-III][MIMIC-III] to adapt to MIMIC-IV. 
