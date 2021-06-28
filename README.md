@@ -81,7 +81,7 @@ psql 'dbname=mimic4 user=mimicuser options=--search_path=mimiciv' -f load_eddata
 - The data description and real data are inconsistent in data format, varchar length, etc. This repo is implemented based on the real data. Some comments are left in create_tables.sql to mark down the difference. 
 - We follow the installation of MIMIC-III that creating 10 subtables for labevents.csv and chartevents.csv, respectively. Chartevents table is divided by itemid to 10-fold, while labevents table is divided by labevents_id.
 - The size of MIMIC-IV after de-compression may exceed 100GB. Therefore, loading data is time-consuming. You may expect several hours to run through the process. 
-- This repo is based on the latest data release before Aug 21, 2020. Should there be any data update, incompatibiltiy may observed.
+- This repo is based on the latest data release before Jun 28, 2021. Should there be any data update, incompatibiltiy may observed.
 - Leave an issue, if you encounter any error.
 
 
